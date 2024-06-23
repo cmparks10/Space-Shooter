@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://x88ff3g8cicu"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_wkovo"]
+[ext_resource type="PackedScene" uid="uid://bvynxqhtcb60d" path="res://Scenes/Ship.tscn" id="2_8ncpt"]
+[ext_resource type="PackedScene" uid="uid://dvq3sispv8n0a" path="res://parallax_background.tscn" id="3_y2teq"]
+[ext_resource type="PackedScene" uid="uid://b37ji7a0qne7d" path="res://HUD.tscn" id="4_ikgpa"]
+[ext_resource type="PackedScene" uid="uid://mtkcpwg2byp8" path="res://Scenes/gameOver.tscn" id="5_a52qi"]
+[ext_resource type="PackedScene" uid="uid://c2l7b45cuex4j" path="res://Scenes/BackgroundMusic.tscn" id="6_ani4x"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://Scenes/joystick/virtual_joystick.tscn" id="7_kg0xg"]
+[ext_resource type="Script" path="res://Scenes/BackgroundMusic.gd" id="8_t1pui"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wkovo")
+
+[node name="PlayerShip" parent="." node_paths=PackedStringArray("joystick_left") instance=ExtResource("2_8ncpt")]
+position = Vector2(120, 347.001)
+rotation = -1.5708
+scale = Vector2(5, 5)
+joystick_left = NodePath("../UI/Virtual Joystick")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Virtual Joystick" parent="UI" instance=ExtResource("7_kg0xg")]
+offset_left = -895.0
+offset_top = -653.0
+offset_right = 1155.0
+offset_bottom = 1005.0
+size_flags_horizontal = 0
+joystick_mode = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_y2teq")]
+
+[node name="HUD" parent="." instance=ExtResource("4_ikgpa")]
+
+[node name="GameOver" parent="." instance=ExtResource("5_a52qi")]
+process_mode = 2
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("6_ani4x")]
+process_mode = 3
+volume_db = -12.18
+autoplay = true
+script = ExtResource("8_t1pui")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(1008, 594)

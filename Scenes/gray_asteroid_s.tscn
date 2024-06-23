@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://p8plt4nuxlhy"]
+
+[ext_resource type="Texture2D" uid="uid://bs55kpoxqjou" path="res://Asteroids_Foreground.png" id="1_87tmr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j346"]
+atlas = ExtResource("1_87tmr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ei30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j346")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vlhv1"]
+radius = 82.0061
+
+[node name="Gray Asteroid S" type="Area2D"]
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_5ei30")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, -1)
+shape = SubResource("CircleShape2D_vlhv1")

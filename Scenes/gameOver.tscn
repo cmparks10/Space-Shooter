@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://mtkcpwg2byp8"]
+
+[ext_resource type="FontFile" uid="uid://bgyjtuw1uov4c" path="res://Retro Gaming.ttf" id="1_oy60t"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ycyo"]
+bg_color = Color(0, 0.721569, 0.32549, 1)
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="Button" type="Button" parent="."]
+texture_filter = 1
+offset_left = 146.0
+offset_top = 90.3333
+offset_right = 263.0
+offset_bottom = 124.333
+scale = Vector2(0.647556, 0.638199)
+theme_override_fonts/font = ExtResource("1_oy60t")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_1ycyo")
+text = "RESTART"

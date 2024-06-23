@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2l7b45cuex4j"]
+
+[ext_resource type="AudioStream" uid="uid://b4pbl30nml2us" path="res://Sounds/2019-12-11_-_Retro_Platforming_-_David_Fesliyan.mp3" id="1_t1sxc"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_t1sxc")

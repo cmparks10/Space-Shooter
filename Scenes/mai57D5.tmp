@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://x88ff3g8cicu"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_wkovo"]
+[ext_resource type="PackedScene" uid="uid://bvynxqhtcb60d" path="res://Scenes/Ship.tscn" id="2_8ncpt"]
+[ext_resource type="PackedScene" uid="uid://dvq3sispv8n0a" path="res://parallax_background.tscn" id="3_y2teq"]
+[ext_resource type="PackedScene" uid="uid://b37ji7a0qne7d" path="res://HUD.tscn" id="4_ikgpa"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_wkovo")
+
+[node name="PlayerShip" parent="." instance=ExtResource("2_8ncpt")]
+position = Vector2(62, 322)
+rotation = -1.5708
+scale = Vector2(5, 5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("3_y2teq")]
+
+[node name="HUD" parent="." instance=ExtResource("4_ikgpa")]
