@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bvynxqhtcb60d"]
+
+[ext_resource type="Texture2D" uid="uid://dkoyh2yp404ak" path="res://SpaceShooterAssetPack_Ships.png" id="1_8e3s7"]
+[ext_resource type="Script" path="res://Shhip.gd" id="1_yg5q6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mcchg"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1kmq"]
+atlas = ExtResource("1_8e3s7")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5abgf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1kmq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+texture_filter = 1
+script = ExtResource("1_yg5q6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mcchg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5abgf")
